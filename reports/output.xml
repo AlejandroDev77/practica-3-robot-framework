@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.13.3 on win32)" generated="2026-06-04T17:50:27.543900" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Suite" source="C:\Users\USUARIO\Desktop\Nueva carpeta (17)\practica 3\tests\test_suite.robot">
+<test id="s1-t1" name="Ejercicio 2 - Login Incorrecto" line="9">
+<kw name="Abrir Navegador Y Maximizar" owner="common_keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-06-04T17:50:28.663136" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000024B36D12900&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-06-04T17:50:28.653844" elapsed="0.009518"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-06-04T17:50:28.663945" elapsed="0.001175"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--window-size\=1920,1080</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-06-04T17:50:28.665881" elapsed="0.001036"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-06-04T17:50:28.667332" elapsed="0.001018"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-06-04T17:50:28.668782" elapsed="0.000746"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-06-04T17:50:28.705822" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-06-04T17:50:28.669858" elapsed="7.723081"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-04T17:50:36.393736" level="INFO">Opening url 'https://automationexercise.com/login'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-04T17:50:36.393359" elapsed="3.993082"/>
+</kw>
+<arg>${URL}/login</arg>
+<status status="PASS" start="2026-06-04T17:50:28.650660" elapsed="11.736151"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:.login-form h2</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-04T17:50:40.387273" elapsed="0.244012"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-04T17:50:40.633215" level="INFO">Verifying element 'css:.login-form h2' contains exact text 'Login to your account'.</msg>
+<arg>css:.login-form h2</arg>
+<arg>Login to your account</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-04T17:50:40.631949" elapsed="0.050365"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-04T17:50:40.683764" level="INFO">Typing text 'correo_falso_123@invalid.com' into text field 'name:email'.</msg>
+<arg>name:email</arg>
+<arg>${INVALID_EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-04T17:50:40.682863" elapsed="0.271244"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-04T17:50:40.955146" level="INFO">Typing text 'clave_falsa' into text field 'name:password'.</msg>
+<arg>name:password</arg>
+<arg>${INVALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-04T17:50:40.954497" elapsed="0.195839"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-04T17:50:41.151275" level="INFO">Clicking button 'xpath://button[@data-qa='login-button']'.</msg>
+<arg>xpath://button[@data-qa='login-button']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-04T17:50:41.150787" elapsed="2.751276"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://form[@action='/login']/p</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-04T17:50:43.902426" elapsed="0.043273"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-04T17:50:43.946813" level="INFO">Verifying element 'xpath://form[@action='/login']/p' contains exact text 'Your email or password is incorrect!'.</msg>
+<arg>xpath://form[@action='/login']/p</arg>
+<arg>Your email or password is incorrect!</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-04T17:50:43.946134" elapsed="0.036044"/>
+</kw>
+<kw name="Tomar Captura De Pantalla" owner="common_keywords">
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>${EXECDIR}/screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2026-06-04T17:50:43.983609" elapsed="0.000566"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-04T17:50:44.182451" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/ej2_error_login.png"&gt;&lt;img src="../screenshots/ej2_error_login.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${nombre_archivo}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-04T17:50:43.984450" elapsed="0.198293"/>
+</kw>
+<arg>ej2_error_login.png</arg>
+<status status="PASS" start="2026-06-04T17:50:43.982961" elapsed="0.200114"/>
+</kw>
+<kw name="Cerrar Navegador" owner="common_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-04T17:50:44.184584" elapsed="2.400719"/>
+</kw>
+<status status="PASS" start="2026-06-04T17:50:44.183724" elapsed="2.401838"/>
+</kw>
+<doc>Validar login con credenciales invalidas.</doc>
+<status status="PASS" start="2026-06-04T17:50:28.647574" elapsed="17.938111"/>
+</test>
+<test id="s1-t2" name="Ejercicio 3 - Busqueda de Productos" line="26">
+<kw name="Abrir Navegador Y Maximizar" owner="common_keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-06-04T17:50:46.590316" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000024B36E507D0&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-06-04T17:50:46.589015" elapsed="0.001405"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-06-04T17:50:46.590877" elapsed="0.001020"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--window-size\=1920,1080</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-06-04T17:50:46.592373" elapsed="0.000996"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-06-04T17:50:46.593831" elapsed="0.001578"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-06-04T17:50:46.596041" elapsed="0.001188"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-06-04T17:50:46.598473" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-06-04T17:50:46.597772" elapsed="1.266494"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-04T17:50:47.865219" level="INFO">Opening url 'https://automationexercise.com/products'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-04T17:50:47.864803" elapsed="4.580101"/>
+</kw>
+<arg>${URL}/products</arg>
+<status status="PASS" start="2026-06-04T17:50:46.588143" elapsed="5.857150"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:.title.text-center</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-04T17:50:52.446255" elapsed="0.122625"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-04T17:50:52.635563" level="INFO">Element 'css:.title.text-center' contains text 'ALL PRODUCTS'.</msg>
+<arg>css:.title.text-center</arg>
+<arg>ALL PRODUCTS</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2026-06-04T17:50:52.569314" elapsed="0.066444"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-04T17:50:52.637576" level="INFO">Typing text 'tshirt' into text field 'id:search_product'.</msg>
+<arg>id:search_product</arg>
+<arg>${SEARCH_TERM}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-04T17:50:52.636645" elapsed="0.251537"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-04T17:50:52.889168" level="INFO">Clicking button 'id:submit_search'.</msg>
+<arg>id:submit_search</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-04T17:50:52.888563" elapsed="2.153203"/>
+</kw>
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>css:.title.text-center</arg>
+<arg>SEARCHED PRODUCTS</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2026-06-04T17:50:55.042364" elapsed="0.042546"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-04T17:50:55.127367" level="INFO">Element 'css:.title.text-center' contains text 'SEARCHED PRODUCTS'.</msg>
+<arg>css:.title.text-center</arg>
+<arg>SEARCHED PRODUCTS</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2026-06-04T17:50:55.085417" elapsed="0.042191"/>
+</kw>
+<kw name="Tomar Captura De Pantalla" owner="common_keywords">
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>${EXECDIR}/screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2026-06-04T17:50:55.129302" elapsed="0.001055"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-04T17:50:55.451076" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/ej3_searched_products.png"&gt;&lt;img src="../screenshots/ej3_searched_products.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${nombre_archivo}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-04T17:50:55.130885" elapsed="0.320578"/>
+</kw>
+<arg>ej3_searched_products.png</arg>
+<status status="PASS" start="2026-06-04T17:50:55.128192" elapsed="0.323643"/>
+</kw>
+<kw name="Cerrar Navegador" owner="common_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-04T17:50:55.454140" elapsed="2.489686"/>
+</kw>
+<status status="PASS" start="2026-06-04T17:50:55.452813" elapsed="2.491468"/>
+</kw>
+<doc>Validar que la busqueda retorne resultados correctamente.</doc>
+<status status="PASS" start="2026-06-04T17:50:46.586691" elapsed="11.357862"/>
+</test>
+<test id="s1-t3" name="Ejercicio 6 - Suscripcion" line="43">
+<kw name="Abrir Navegador Y Maximizar" owner="common_keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-06-04T17:50:57.951045" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000024B36D796D0&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-06-04T17:50:57.948986" elapsed="0.002218"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-06-04T17:50:57.951826" elapsed="0.001401"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--window-size\=1920,1080</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-06-04T17:50:57.953826" elapsed="0.001379"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-06-04T17:50:57.955749" elapsed="0.001176"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-06-04T17:50:57.957715" elapsed="0.001654"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-06-04T17:50:57.961126" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-06-04T17:50:57.960037" elapsed="1.337661"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-04T17:50:59.299135" level="INFO">Opening url 'https://automationexercise.com'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-04T17:50:59.298565" elapsed="6.052609"/>
+</kw>
+<arg>${URL}</arg>
+<status status="PASS" start="2026-06-04T17:50:57.947479" elapsed="7.404026"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:.single-widget h2</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-04T17:51:05.351924" elapsed="0.054856"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>css:.single-widget h2</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-04T17:51:05.407356" elapsed="0.358353"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-04T17:51:05.875282" level="INFO">Element 'css:.single-widget h2' contains text 'SUBSCRIPTION'.</msg>
+<arg>css:.single-widget h2</arg>
+<arg>SUBSCRIPTION</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2026-06-04T17:51:05.766227" elapsed="0.109317"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-04T17:51:05.877307" level="INFO">Typing text 'test_robot@example.com' into text field 'id:susbscribe_email'.</msg>
+<arg>id:susbscribe_email</arg>
+<arg>test_robot@example.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-04T17:51:05.876478" elapsed="0.337339"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-04T17:51:06.214937" level="INFO">Clicking button 'id:subscribe'.</msg>
+<arg>id:subscribe</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-04T17:51:06.214319" elapsed="0.331314"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:success-subscribe</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-04T17:51:06.546216" elapsed="0.044047"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-04T17:51:06.630673" level="INFO">Element 'id:success-subscribe' contains text 'You have been successfully subscribed!'.</msg>
+<arg>id:success-subscribe</arg>
+<arg>You have been successfully subscribed!</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2026-06-04T17:51:06.590702" elapsed="0.040304"/>
+</kw>
+<kw name="Tomar Captura De Pantalla" owner="common_keywords">
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>${EXECDIR}/screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2026-06-04T17:51:06.632629" elapsed="0.000764"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-04T17:51:06.874381" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/ej6_subscription_success.png"&gt;&lt;img src="../screenshots/ej6_subscription_success.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${nombre_archivo}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-04T17:51:06.633730" elapsed="0.240948"/>
+</kw>
+<arg>ej6_subscription_success.png</arg>
+<status status="PASS" start="2026-06-04T17:51:06.631695" elapsed="0.243247"/>
+</kw>
+<kw name="Cerrar Navegador" owner="common_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-04T17:51:06.876433" elapsed="2.444263"/>
+</kw>
+<status status="PASS" start="2026-06-04T17:51:06.875688" elapsed="2.445319"/>
+</kw>
+<doc>Validar la funcionalidad de suscripcion por correo.</doc>
+<status status="PASS" start="2026-06-04T17:50:57.945724" elapsed="11.375655"/>
+</test>
+<doc>Pruebas automatizadas de Practica 3 con Robot Framework</doc>
+<status status="PASS" start="2026-06-04T17:50:27.547470" elapsed="41.775378"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Suite" id="s1" pass="3" fail="0" skip="0">Test Suite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
