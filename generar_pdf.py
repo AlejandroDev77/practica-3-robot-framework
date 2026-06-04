@@ -20,7 +20,7 @@ def main():
     pdf.cell(w_seguro, 10, "Ruta de GIT del Proyecto:", new_x="LMARGIN", new_y="NEXT")
     pdf.set_font("Helvetica", size=11)
     pdf.set_x(25.4)
-    pdf.multi_cell(w_seguro, 8, text="C:/Users/USUARIO/Desktop/Nueva carpeta (17)/practica 3/.git/", align="L", new_x="LMARGIN", new_y="NEXT")
+    pdf.multi_cell(w_seguro, 8, text="https://github.com/AlejandroDev77/practica-3-robot-framework", align="L", new_x="LMARGIN", new_y="NEXT")
     pdf.set_y(pdf.get_y() + 5)
     
     # Descripción de Estructura
